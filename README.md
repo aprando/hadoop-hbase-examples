@@ -30,3 +30,18 @@ TODO
 	- Sqoop Básico + Ingestão de dados de um MySQL: ~1h
 	- Queries Hive (mostrar as queries que faço em produção): 1h 
 
+* Aula 3
+	- Intro a IA + Mahout Básico: ~1h
+	- Instalação HBase Standalone: ~30 min
+	- HBase Básico: ~30 min
+	- HBase Exemplos: ~30 min
+	- Apresentar HBase em cluster (explicar HDFS + Apresentar cluster do cloudera):  30 min
+	 
+* Aula 4
+	- Instalação MongoDB Standalone: ~30min
+	- MongoDB Básico: ~30min
+	- MongoDB Modelagem: ~30min
+	- Instalação Redis Standalone: ~30min
+	- Redis Básico: ~30min
+	- Redis Modelagem: ~30min
+
