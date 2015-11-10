@@ -11,10 +11,13 @@ TODO
 TODO
 
 ### Instalação do HBase
+TODO
 
 ### Instalação do Mongo
+TODO
 
 ### Instalação do Redis
+TODO
 
 ## Agenda
 
