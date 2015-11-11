@@ -1,5 +1,5 @@
 # Sobre o Projeto
-Neste projeto vamos fazer um overview por todo o ecossistema Hadoop, desde sua instalação, configuração e projeto relacionados como Hive, Pig, Mahout e HBase. Além disso, vamos dar uma breve introdução as bases N Redis e Mongo, dada a correlação entre os temas NoSQL e BigData.
+Este projeto realiza um overview com exemplos por todo o ecossistema Hadoop, desde sua instalação, configuração e projeto relacionados como Hive, Pig, Mahout e HBase. Além disso, é apresentado uma breve introdução as bases Redis e Mongo, dada a correlação entre os temas NoSQL e BigData.
 
 ## Ambiente
 * Todos os exemplos são executados em um ambiente Unix.
@@ -16,7 +16,6 @@ Para isso, basta seguir os passos:
 * Abir o Virtual Box.
 * Clicar na opção "Novo".
 ![Passo1](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-01.png)
-
 * Selecionar o sistema operacional Linux Ubuntu.
 ![Passo2](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-02.png)
 
@@ -33,11 +32,57 @@ Para isso, basta seguir os passos:
   * Região e localização São Paulo / Brasil.
   * Nome do usuário: hadoop
   * Senha do usuário: 12345678
+  * Etapas relacionadas a proxy, segurança e demais programas que devem ser instalados, basta clicar em "next". 
   * Demais questionamentos, basta escolher a opção "padrão" e "next".	
 
 #### Opção 2: Vagrant ####
 Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vagrantup.com/), basta utilizar nosso VagrantFile que esta na raiz do projeto! =]
+
 Caso contratário, por favor, utilize a opção 1.
+
+### Realizar Dowload de pacotes
+Baixar todos os pacotes para utilizarmos na nossa instalação.
+Para isso, basta rodar os comandos abaixo na sua vm
+* Instalar Java:
+````
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt-get update
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+sudo apt-get -y install oracle-java6-installer
+sudo apt-get -y install oracle-java6-set-default
+````
+
+* Instalar softwares básicos.
+````
+sudo apt-get install ssh
+sudo apt-get install rsync
+````
+
+* Baixar o hadoop.
+````
+wget  http://ftp.unicamp.br/pub/apache/hadoop/core/stable/hadoop-2.7.1.tar.gz
+````
+
+* Baixar o hbase.
+````
+wget http://mirror.nbtelecom.com.br/apache/hbase/1.1.2/hbase-1.1.2-bin.tar.gz
+````
+
+* Baixar o spark.
+````
+wget http://ftp.unicamp.br/pub/apache/spark/spark-1.4.1/spark-1.4.1-bin-hadoop2.6.tgz
+````
+
+* Baixar o hive.
+````
+http://www.eu.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
+````
+
+* Baixar o pig.
+````
+http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
+````
 
 ### Instalação do Hadoop
 TODO
