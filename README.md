@@ -1,13 +1,43 @@
-TOC
-
 # Sobre o Projeto
 Neste projeto vamos fazer um overview por todo o ecossistema Hadoop, desde sua instalação, configuração e projeto relacionados como Hive, Pig, Mahout e HBase. Além disso, vamos dar uma breve introdução as bases N Redis e Mongo, dada a correlação entre os temas NoSQL e BigData.
 
 ## Ambiente
-TODO
+* Todos os exemplos são executados em um ambiente Unix.
+* É necessário uma máquina com no mínimo 2 cores e 4GB de RAM para performance aceitável.
 
 ### Instalação do Sistema Operacional
-TODO
+Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
+
+#### Opção 2: Criando uma máquina virtual no VirtualBox ####
+Caso você conheça 
+Para isso, basta seguir os passos:
+* Baixar e instalar o [Virtual Box](https://www.virtualbox.org/). 
+* Baixar a iso do ubuntu server [aqui](https://bitbucket.org/booteam/scanboo-dev).
+* Abir o Virtual Box.
+* Clicar na opção "Novo".
+![Passo1](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-01.png)
+
+* Selecionar o sistema operacional Linux Ubuntu.
+![Passo2](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-02.png)
+
+* Nomear a VM e selecionar a quantidade de HD (mínimo de 8GB).
+![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
+
+* Startar a sua VM.
+* Selecionar a ISO que você realizou download para iniciarmos a instalação do Ubuntu Server 14.04 (isso ocorrerá apenas na primeira inicialização).
+![Passo4](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-04.png)
+
+* Os próximos passos são referentes a instalação do Ubuntu na sua VM. Para eles, considerar:
+  * Para a instalação, você pode selecionar a ligua de sua preferência.
+  * Para o SO, recomendamos selecionar a lingua inglesa. 	
+  * Região e localização São Paulo / Brasil.
+  * Nome do usuário: hadoop
+  * Senha do usuário: 12345678
+  * Demais questionamentos, basta escolher a opção "padrão" e "next".	
+
+#### Opção 2: Vagrant ####
+Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vagrantup.com/), basta utilizar nosso VagrantFile que esta na raiz do projeto! =]
+Caso contratário, por favor, utilize a opção 1.
 
 ### Instalação do Hadoop
 TODO
