@@ -1,5 +1,7 @@
-# Exemplos Ecossistema Hadoop
-TODO
+TOC
+
+# Sobre o Projeto
+Neste projeto vamos fazer um overview por todo o ecossistema Hadoop, desde sua instalação, configuração e projeto relacionados como Hive, Pig, Mahout e HBase. Além disso, vamos dar uma breve introdução as bases N Redis e Mongo, dada a correlação entre os temas NoSQL e BigData.
 
 ## Ambiente
 TODO
