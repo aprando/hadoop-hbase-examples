@@ -76,12 +76,12 @@ wget http://ftp.unicamp.br/pub/apache/spark/spark-1.4.1/spark-1.4.1-bin-hadoop2.
 
 * Baixar o hive.
 ````
-http://www.eu.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
+wget http://www.eu.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
 ````
 
 * Baixar o pig.
 ````
-http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
+wget http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
 ````
 
 * Baixar e instalar o redis.
