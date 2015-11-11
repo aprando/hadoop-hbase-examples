@@ -12,7 +12,7 @@ Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
 
 Para isso, basta seguir os passos:
 * Baixar e instalar o [Virtual Box](https://www.virtualbox.org/). 
-* Baixar a iso do ubuntu server [aqui](http://www.ubuntu.com/download/desktop).
+* Baixar a iso do [Ubuntu Server 14.04](http://www.ubuntu.com/download/desktop).
 * Abir o Virtual Box.
 * Clicar na opção "Novo".
 ![Passo1](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-01.png)
