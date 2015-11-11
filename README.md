@@ -84,6 +84,20 @@ http://www.eu.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
 http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
 ````
 
+* Baixar e instalar o redis.
+````
+sudo apt-get install -y redis-server
+````
+
+* Baixar e instalar o mongo.
+````
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+sudo echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+````
+
 ### Instalação do Hadoop
 TODO
 
