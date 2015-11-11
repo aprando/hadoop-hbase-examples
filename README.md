@@ -8,8 +8,8 @@ Este projeto realiza um overview com exemplos por todo o ecossistema Hadoop, des
 ### Instalação do Sistema Operacional
 Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
 
-#### Opção 2: Criando uma máquina virtual no VirtualBox ####
-Caso você conheça 
+#### Opção 1: Criando uma máquina virtual no VirtualBox ####
+
 Para isso, basta seguir os passos:
 * Baixar e instalar o [Virtual Box](https://www.virtualbox.org/). 
 * Baixar a iso do ubuntu server [aqui](https://bitbucket.org/booteam/scanboo-dev).
