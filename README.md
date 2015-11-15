@@ -27,7 +27,7 @@ Para isso, basta seguir os passos:
 ![Passo4](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-04.png)
 
 * Os próximos passos são referentes a instalação do Ubuntu na sua VM. Para eles, considerar:
-  * Para a instalação, você pode selecionar a ligua de sua preferência.
+  * Para a instalação, você pode selecionar a língua de sua preferência.
   * Para o SO, recomendamos selecionar a lingua inglesa. 	
   * Região e localização São Paulo / Brasil.
   * Nome do usuário: hadoop
