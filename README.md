@@ -49,8 +49,10 @@ sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get update
 echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-sudo apt-get -y install oracle-java6-installer
-sudo apt-get -y install oracle-java6-set-default
+sudo apt-get -y install oracle-java7-installer
+sudo apt-get -y install oracle-java7-set-default
+
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 ````
 
 * Instalar softwares básicos.
@@ -99,7 +101,22 @@ sudo apt-get install -y mongodb-org
 ````
 
 ### Instalação do Hadoop
-TODO
+
+Por default, o Hadoop é configurado para ser executado em um modo não-distribuído, como um único processo Java. 
+Por isso, a instalação do modo standalone é bem simples:
+* Descompacte o pacote do Hadoop baixado.
+* Execute o comando abaixo e veja a documentação de como utilizar o script do hadoop:
+```
+bin/hadoop
+```
+
+* Para validar seu funcionamento, rode o exemplo abaixo. Nele nós executamos um programa 'grep' dentro do jar hadoop-mapreduce-examples-*.jar que recebe um diretorio, busca e apresenta todos os matches de uma regular expression em um diretorio output: 
+```
+mkdir input
+cp etc/hadoop/*.xml input
+bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
+cat output/*
+```
 
 ### Instalação do HBase
 TODO
