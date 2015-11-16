@@ -121,7 +121,11 @@ cat output/*
 ```
 
 #### Pseudo-distribuído
-Hadoop também pode ser executado em uma única máquina em um modo pseudo-distribuído, onde cada daemon Hadoop roda em um processo Java separado. Para isso, siga as configurações abaixo:
+Hadoop também pode ser executado em uma única máquina em um modo pseudo-distribuído, onde cada daemon Hadoop roda em um processo Java separado. 
+
+Para isso, siga as configurações a seguir.
+
+##### Configuração do HDFS 
 
 * Altere o arquivo etc/hadoop/core-site.xml:
 ```
@@ -153,9 +157,80 @@ bin/hdfs namenode -format
 sbin/start-dfs.sh
 ```
 
-* Navegue pela interface web do NameNodeBrowse:
+* Navegue pela interface web do NameNode:
 ```
 http://localhost:50070/
+```
+
+* Make the HDFS directories required to execute MapReduce jobs:
+```
+bin/hdfs dfs -mkdir /user
+bin/hdfs dfs -mkdir /user/<username>
+```
+
+* Quando finalizar, pare as deamons:
+```
+sbin/stop-dfs.sh
+```
+
+##### Configuração do YARN
+
+* Altere o arquivo: etc/hadoop/mapred-site.xml
+```
+<configuration>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+</configuration>
+```
+
+* Altere o arquivo: etc/hadoop/yarn-site.xml
+```
+<configuration>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+</configuration>
+```
+
+* Inicie as daemons ResourceManager e NodeManager:
+```
+sbin/start-yarn.sh
+```
+
+* Navegue pela interface web do ResourceManager:
+```
+ http://localhost:8088/
+```
+
+* Quando finalizar, pare as deamons:
+```
+sbin/stop-yarn.sh
+```
+
+##### Validando a instalação
+
+* Copy the input files into the distributed filesystem:
+```
+bin/hdfs dfs -put etc/hadoop input
+```
+
+* Run some of the examples provided:
+```
+bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
+```
+
+* Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them:
+```
+bin/hdfs dfs -get output output
+cat output/*
+```
+
+* or View the output files on the distributed filesystem:
+```
+bin/hdfs dfs -cat output/*
 ```
 
 ### Instalação do HBase
