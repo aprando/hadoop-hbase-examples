@@ -102,6 +102,8 @@ sudo apt-get install -y mongodb-org
 
 ### Instalação do Hadoop
 
+#### Standalone
+
 Por default, o Hadoop é configurado para ser executado em um modo não-distribuído, como um único processo Java. 
 Por isso, a instalação do modo standalone é bem simples:
 * Descompacte o pacote do Hadoop baixado.
@@ -110,12 +112,50 @@ Por isso, a instalação do modo standalone é bem simples:
 bin/hadoop
 ```
 
-* Para validar seu funcionamento, rode o exemplo abaixo. Nele nós executamos um programa 'grep' dentro do jar hadoop-mapreduce-examples-*.jar que recebe um diretorio, busca e apresenta todos os matches de uma regular expression em um diretorio output: 
+Para validar seu funcionamento, rode o exemplo abaixo. Nele nós executamos um programa 'grep' dentro do jar hadoop-mapreduce-examples-*.jar que recebe um diretorio, busca e apresenta todos os matches de uma regular expression em um diretorio output: 
 ```
 mkdir input
 cp etc/hadoop/*.xml input
 bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
 cat output/*
+```
+
+#### Pseudo-distribuído
+Hadoop também pode ser executado em uma única máquina em um modo pseudo-distribuído, onde cada daemon Hadoop roda em um processo Java separado. Para isso, siga as configurações abaixo:
+
+* Altere o arquivo etc/hadoop/core-site.xml:
+```
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+```
+
+* Altere o arquivo etc/hadoop/hdfs-site.xml::
+```
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+</configuration>
+```
+
+* Formate o filesystem:
+```
+bin/hdfs namenode -format
+```
+
+* Inicie as deamons datanode e NameNode (um arquivo de log é escrito no diretorio $HADOOP_HOME/logs).
+```
+sbin/start-dfs.sh
+```
+
+* Navegue pela interface web do NameNodeBrowse:
+```
+http://localhost:50070/
 ```
 
 ### Instalação do HBase
