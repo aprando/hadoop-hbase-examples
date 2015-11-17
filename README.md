@@ -246,16 +246,16 @@ TODO
 
 * Aula 1
 	- Instalação do Hadoop Standalone e Pseudo-distribuido: ~30min
-	- MapReduce Básico (word count): ~30min
 	- HDFS Básico (ingestão de dados e consultas): ~45min
-	- Exemplo Bolsa Familia: ~45min
+	- MapReduce Básico (word count): ~30min
+	- MapReduce do Bolsa Familia: ~45min
 	- Instalação do hadoop em cluster com o Cloudera Manager: ~30min
 
 * Aula 2
 	- Hive Básico: ~30min
 	- Hive com Bolsa Familia: 30min
 	- Sqoop Básico + Ingestão de dados de um MySQL: ~1h
-	- HUE + Hive no Cloudera Manager: 1h 
+	- HUE (Hive e Oozie) no Cloudera Manager: 1h 
 
 * Aula 3
 	- Intro a IA + Mahout Básico: ~1h
