@@ -152,7 +152,7 @@ Para isso, siga as configurações a seguir.
 bin/hdfs namenode -format
 ```
 
-* Inicie as deamons datanode e NameNode (um arquivo de log é escrito no diretorio $HADOOP_HOME/logs).
+* Inicie as deamons DataNode e NameNode (um arquivo de log é escrito no diretorio $HADOOP_HOME/logs).
 ```
 sbin/start-dfs.sh
 ```
@@ -212,23 +212,23 @@ sbin/stop-yarn.sh
 
 ##### Validando a instalação
 
-* Copy the input files into the distributed filesystem:
+* Copie alguns arquivos de input no hdfs:
 ```
 bin/hdfs dfs -put etc/hadoop input
 ```
 
-* Run some of the examples provided:
+* Rode o comando grep do jar de exemplo.
 ```
 bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
 ```
 
-* Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them:
+* Examine os arquivos de saida baixando eles para sua maquina local:
 ```
 bin/hdfs dfs -get output output
 cat output/*
 ```
 
-* or View the output files on the distributed filesystem:
+* ou veja os arquivos de saida dentro do proprio hdfs:
 ```
 bin/hdfs dfs -cat output/*
 ```
@@ -245,16 +245,17 @@ TODO
 ## Agenda
 
 * Aula 1
-	- Instalação do Hadoop Standalone: ~30min
+	- Instalação do Hadoop Standalone e Pseudo-distribuido: ~30min
 	- MapReduce Básico (word count): ~30min
 	- HDFS Básico (ingestão de dados e consultas): ~45min
-	- Instalação do Hadoop em cluster (explicar YARN + Apresentar cluster do cloudera): ~1h15
+	- Exemplo Bolsa Familia: ~45min
+	- Instalação do hadoop em cluster com o Cloudera Manager: ~30min
 
 * Aula 2
-	- Pig Básico: ~30min
 	- Hive Básico: ~30min
+	- Hive com Bolsa Familia: 30min
 	- Sqoop Básico + Ingestão de dados de um MySQL: ~1h
-	- Queries Hive (mostrar as queries que faço em produção): 1h 
+	- HUE + Hive no Cloudera Manager: 1h 
 
 * Aula 3
 	- Intro a IA + Mahout Básico: ~1h
