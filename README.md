@@ -126,7 +126,7 @@ Hadoop também pode ser executado em uma única máquina em um modo pseudo-distr
 Para isso, siga as configurações a seguir.
 
 ##### Acesso SSH 
-O Hadoop gerencia todos os nós do seu cluster por meio de acesso SSH. Para nosso exemplo em um unico nó precisamos configurar o acesso SSH para localhost e para o usuário hadoop (ou o usuário que você vai rodar seus jobs).
+O Hadoop gerencia todos os nós do seu cluster por meio de acesso SSH. Como nosso exemplo roda em um unico nó pseudo-distribuido, precisamos configurar o acesso SSH para localhost e o usuário hadoop (ou o usuário ubuntu que você vai rodar seus jobs).
 ```
 ssh-keygen
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
