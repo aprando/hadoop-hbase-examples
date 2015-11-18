@@ -125,6 +125,22 @@ Hadoop também pode ser executado em uma única máquina em um modo pseudo-distr
 
 Para isso, siga as configurações a seguir.
 
+##### Acesso SSH 
+O Hadoop gerencia todos os nós do seu cluster por meio de acesso SSH. Para nosso exemplo em um unico nó precisamos configurar o acesso SSH para localhost e para o usuário hadoop (ou o usuário que você vai rodar seus jobs).
+```
+ssh-keygen
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+ssh localhost
+```
+
+##### Configuração da JDK (para evitar problemas)...
+O Hadoop é escrito em Java, portanto todos os processos que subimos no SO utilizam a JDK.
+Para que o Hadoop utilize a versão correta, altere o arquivo etc/hadoop/hadoop-env.sh:
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+```
+
 ##### Configuração do HDFS 
 
 * Altere o arquivo etc/hadoop/core-site.xml:
