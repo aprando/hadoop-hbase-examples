@@ -20,12 +20,14 @@ Para isso, basta seguir os passos:
 ![Passo2](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-02.png)
 * Nomear a VM e selecionar a quantidade de HD (mínimo de 16GB).
 ![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
-* Selecionar a quantidade de memoria RAM com mínimo de 2048MB (2GB).
-![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
-* Selecionar a quantidade de cores de CPU com mínimo de 4 cores.
-![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
-* Habilitar copy e past entre a máquina virtual e a máquina host.
-![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
+* Entrar no menu "Settings" -> "System" -> "Motherboard" e selecionar a quantidade de memoria RAM com mínimo de 2048MB (2GB).
+![Passo5](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-05.png)
+* Entrar no menu "Settings" -> "System" -> "Processor" e selecionar a quantidade de cores de CPU com mínimo de 4 cores.
+![Passo6](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-06.png)
+* Entrar no menu "Settings" -> "Display" -> "Vídeo" e selecionar a quantidade de memoria de 128GB RAM e opcao "Enable 3D Aceleration".
+![Passo7](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-07.png)
+* Entrar no menu "Settings" -> "General" -> "Advanced" e habilitar copy e past entre a máquina virtual e a máquina host.
+![Passo8](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-08.png)
 
 * Startar a sua VM.
 * Selecionar a ISO que você realizou download para iniciarmos a instalação do Ubuntu Server 14.04 (isso ocorrerá apenas na primeira inicialização).
