@@ -51,9 +51,13 @@ echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-
 echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 sudo apt-get -y install oracle-java7-installer
 sudo apt-get -y install oracle-java7-set-default
+````
 
+* Adicione no seu ~/.bashrc:
+````
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 ````
+
 
 * Instalar softwares básicos.
 ````
@@ -68,7 +72,7 @@ wget  http://ftp.unicamp.br/pub/apache/hadoop/core/stable/hadoop-2.7.1.tar.gz
 
 * Baixar o hbase.
 ````
-wget http://mirror.nbtelecom.com.br/apache/hbase/1.1.2/hbase-1.1.2-bin.tar.gz
+wget http://www.eu.apache.org/dist/hbase/1.1.2/hbase-1.1.2-bin.tar.gz
 ````
 
 * Baixar o spark.
