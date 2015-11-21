@@ -71,6 +71,11 @@ sudo apt-get -y install oracle-java7-set-default
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 ````
 
+* Instalar Maven:
+````
+sudo apt-get install maven
+````
+
 * Instalar softwares básicos.
 ````
 sudo apt-get install ssh
@@ -101,6 +106,17 @@ wget http://www.eu.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
 ````
 wget http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
 ````
+
+* Baixar o mahout.
+````
+wget http://ftp.unicamp.br/pub/apache/mahout/0.11.1/apache-mahout-distribution-0.11.1.tar.gz
+````
+
+* Baixar o sqoop.
+````
+wget http://ftp.unicamp.br/pub/apache/sqoop/1.99.6/sqoop-1.99.6-bin-hadoop200.tar.gz
+````
+
 
 * Baixar o redis.
 ````
