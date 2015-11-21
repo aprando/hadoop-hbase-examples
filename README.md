@@ -34,32 +34,25 @@ Para isso, basta seguir os passos:
 12. Selecionar a ISO que você realizou download para iniciarmos a instalação do Ubuntu Server 14.04 (isso ocorrerá apenas na primeira inicialização).
 ![Passo4](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-04.png)
 
-13. Os passos referentes a instalação do Ubuntu na sua VM, considerar:
-
-..* Para a instalação, você pode selecionar a língua de sua preferência.
-..* Para o SO, recomendamos selecionar a lingua inglesa. 	
-..* Região e localização São Paulo / Brasil.
-..* Nome do usuário: hadoop
-..* Senha do usuário: 123456
-..* Etapas relacionadas a proxy, segurança e demais programas que devem ser instalados, basta clicar em "next". 
-..* Demais questionamentos, basta escolher a opção "padrão" e "next".	
-
-14. Instale o pacote virtualbix-guest para conseguir resize da tela. Para isso, abra seu terminal e digite:
-````
+13. Inicie a instalação do Ubuntu Desktop na sua VM selecionando a língua de sua preferência.
+14. Escolha a região e localização São Paulo / Brasil.
+15. Durante a instalação, você deve escolher o padrão do seu teclado, o nome do usuário do SO (sugestão: hadoop) e a senha do usuário (sugestão: 123456).
+16. Demais questionamentos, basta escolher a opção "padrão" e "next".
+17. Após finalizar a instalação do SO, abra o terminal e instala o virtualbox-guest para desfrutar sua VM em full screen:
+```
 sudo apt-get update
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
-````
-
-15. PRONTO! Agora sua VM esta completa e pronta para rodar seus exemplos do HADOOP!
+```
 
 #### Opção 2: Vagrant ####
 Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vagrantup.com/), basta utilizar nosso VagrantFile que esta na raiz do projeto! =]
 
 Caso contratário, por favor, utilize a opção 1.
 
-#### Opção 3: Máquina virtual já instalada... ####
+#### Opção 3: Máquina virtual já criada... ####
 Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes instalados! =]
-Esta opção contemplate toda a instalação acima. Entretanto, confira se os itens 7, 8, 9 e 10 estão OK!
+Esta opção contempla toda a instalação acima e os pacotes abaixo, porém nenhuma instalação foi realizada.
+Por favor, confira se os itens 7, 8, 9 e 10 estão OK!
 ````
 https://drive.google.com/folderview?id=0B6BAj1gwpQqKSzY5dnhNemc2OGc&usp=sharing
 ````
