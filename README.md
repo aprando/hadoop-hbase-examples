@@ -53,6 +53,10 @@ Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vag
 
 Caso contratário, por favor, utilize a opção 1.
 
+#### Opção 3: Máquina virtual já instalada... ####
+Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes instalados! =]
+https://drive.google.com/folderview?id=0B6BAj1gwpQqKSzY5dnhNemc2OGc&usp=sharing
+
 ### Realizar Dowload de pacotes
 Baixar todos os pacotes para utilizarmos na nossa instalação.
 Para isso, basta rodar os comandos abaixo na sua vm
