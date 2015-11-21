@@ -12,33 +12,50 @@ Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
 
 Para isso, basta seguir os passos:
 * Baixar e instalar o [Virtual Box](https://www.virtualbox.org/). 
-* Baixar a iso do [Ubuntu Server 14.04](http://www.ubuntu.com/download/server) ou [Ubuntu Desktop 14.04](http://www.ubuntu.com/download/desktop).
+* Baixar a iso do [Ubuntu Desktop 14.04.1](http://old-releases.ubuntu.com/releases/14.04.2/ubuntu-14.04.1-desktop-amd64.iso).
 * Abrir o Virtual Box.
 * Clicar na opção "Novo".
 ![Passo1](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-01.png)
 * Selecionar o sistema operacional Linux Ubuntu.
 ![Passo2](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-02.png)
-
-* Nomear a VM e selecionar a quantidade de HD (mínimo de 8GB).
+* Nomear a VM e selecionar a quantidade de HD (mínimo de 16GB).
+![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
+* Selecionar a quantidade de memoria RAM com mínimo de 2048MB (2GB).
+![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
+* Selecionar a quantidade de cores de CPU com mínimo de 4 cores.
+![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
+* Habilitar copy e past entre a máquina virtual e a máquina host.
 ![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
 
 * Startar a sua VM.
 * Selecionar a ISO que você realizou download para iniciarmos a instalação do Ubuntu Server 14.04 (isso ocorrerá apenas na primeira inicialização).
 ![Passo4](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-04.png)
 
-* Os próximos passos são referentes a instalação do Ubuntu na sua VM. Para eles, considerar:
+* Os passos referentes a instalação do Ubuntu na sua VM, considerar:
   * Para a instalação, você pode selecionar a língua de sua preferência.
   * Para o SO, recomendamos selecionar a lingua inglesa. 	
   * Região e localização São Paulo / Brasil.
   * Nome do usuário: hadoop
-  * Senha do usuário: 12345678
+  * Senha do usuário: 123456
   * Etapas relacionadas a proxy, segurança e demais programas que devem ser instalados, basta clicar em "next". 
   * Demais questionamentos, basta escolher a opção "padrão" e "next".	
+
+* Instale o pacote virtualbix-guest para conseguir resize da tela (ALELUUUUIA =]). Para isso, abra seu terminal e digite:
+````
+sudo apt-get update
+sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+````
+
+* PRONTO! Agora sua VM esta completa e pronta para rodar seus exemplos do HADOOP!
 
 #### Opção 2: Vagrant ####
 Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vagrantup.com/), basta utilizar nosso VagrantFile que esta na raiz do projeto! =]
 
 Caso contratário, por favor, utilize a opção 1.
+
+#### Opção 3: Máquina virtual já instalada... ####
+Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes instalados! =]
+https://drive.google.com/folderview?id=0B6BAj1gwpQqKSzY5dnhNemc2OGc&usp=sharing
 
 ### Realizar Dowload de pacotes
 Baixar todos os pacotes para utilizarmos na nossa instalação.
@@ -51,8 +68,16 @@ echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-
 echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 sudo apt-get -y install oracle-java7-installer
 sudo apt-get -y install oracle-java7-set-default
+````
 
+* Altere o arquivo ~/.bashrc e adicione a linha abaixo:
+````
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+````
+
+* Instalar Maven:
+````
+sudo apt-get install maven
 ````
 
 * Instalar softwares básicos.
@@ -68,7 +93,7 @@ wget  http://ftp.unicamp.br/pub/apache/hadoop/core/stable/hadoop-2.7.1.tar.gz
 
 * Baixar o hbase.
 ````
-wget http://mirror.nbtelecom.com.br/apache/hbase/1.1.2/hbase-1.1.2-bin.tar.gz
+wget http://www.eu.apache.org/dist/hbase/1.1.2/hbase-1.1.2-bin.tar.gz
 ````
 
 * Baixar o spark.
@@ -86,18 +111,25 @@ wget http://www.eu.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
 wget http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
 ````
 
-* Baixar e instalar o redis.
+* Baixar o mahout.
 ````
-sudo apt-get install -y redis-server
+wget http://ftp.unicamp.br/pub/apache/mahout/0.11.1/apache-mahout-distribution-0.11.1.tar.gz
 ````
 
-* Baixar e instalar o mongo.
+* Baixar o sqoop.
 ````
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-sudo echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-sudo apt-get update
+wget http://ftp.unicamp.br/pub/apache/sqoop/1.99.6/sqoop-1.99.6-bin-hadoop200.tar.gz
+````
 
-sudo apt-get install -y mongodb-org
+
+* Baixar o redis.
+````
+wget http://download.redis.io/releases/redis-3.0.5.tar.gz
+````
+
+* Baixar o mongo.
+````
+wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.0.7.tgz
 ````
 
 ### Instalação do Hadoop
@@ -261,30 +293,31 @@ TODO
 ## Agenda
 
 * Aula 1
-	- Instalação do Hadoop Standalone e Pseudo-distribuido: ~30min
-	- HDFS Básico (ingestão de dados e consultas): ~45min
-	- MapReduce Básico (word count): ~30min
-	- MapReduce do Bolsa Familia: ~45min
-	- Instalação do hadoop em cluster com o Cloudera Manager: ~30min
+	- Instalação do Hadoop Standalone e Pseudo-distribuido.
+	- HDFS Básico (ingestão de dados e consultas).
+	- MapReduce Básico (word count).
+	- MapReduce do Bolsa Familia.
 
 * Aula 2
-	- Hive Básico: ~30min
-	- Hive com Bolsa Familia: 30min
-	- Sqoop Básico + Ingestão de dados de um MySQL: ~1h
-	- HUE (Hive e Oozie) no Cloudera Manager: 1h 
+	- Revisão Aula 	
+	- Hive Básico.
+	- Hive com Bolsa Familia.
+	- Sqoop Básico + Ingestão de dados de um MySQL.
+	- Cloudera Manager Overview.
 
 * Aula 3
-	- Intro a IA + Mahout Básico: ~1h
-	- Instalação HBase Standalone: ~30 min
-	- HBase Básico: ~30 min
-	- HBase Exemplos: ~30 min
-	- Apresentar HBase em cluster (explicar HDFS + Apresentar cluster do cloudera):  30 min
+	- Instalação de um cluster Hadoop.
+	- Intro a IA + Mahout Básico.
+	- Instalação HBase Standalone.
+	- HBase Básico.
+	- HBase Exemplos.
+	- Apresentar HBase em cluster (explicar HDFS + Apresentar cluster do cloudera).
 	 
 * Aula 4
-	- Instalação MongoDB Standalone: ~30min
-	- MongoDB Básico: ~30min
-	- MongoDB Modelagem: ~30min
-	- Instalação Redis Standalone: ~30min
-	- Redis Básico: ~30min
-	- Redis Modelagem: ~30min
+ 	- Instalação MongoDB Standalone.
+	- MongoDB Básico.
+	- MongoDB Modelagem.
+	- Instalação Redis Standalone.
+	- Redis Básico.
+	- Redis Modelagem.
 
