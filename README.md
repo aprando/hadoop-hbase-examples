@@ -40,7 +40,7 @@ Para isso, basta seguir os passos:
   * Etapas relacionadas a proxy, segurança e demais programas que devem ser instalados, basta clicar em "next". 
   * Demais questionamentos, basta escolher a opção "padrão" e "next".	
 
-* Instale o pacote virtualbix-guest para conseguir resize da tela (ALELUUUUIA =]). Portanto, abre seu terminal e digite:
+* Instale o pacote virtualbix-guest para conseguir resize da tela (ALELUUUUIA =]). Para isso, abra seu terminal e digite:
 ````
 sudo apt-get update
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
@@ -66,11 +66,10 @@ sudo apt-get -y install oracle-java7-installer
 sudo apt-get -y install oracle-java7-set-default
 ````
 
-* Adicione no seu ~/.bashrc:
+* Altere o arquivo ~/.bashrc e adicione a linha abaixo:
 ````
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 ````
-
 
 * Instalar softwares básicos.
 ````
@@ -103,18 +102,14 @@ wget http://www.eu.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
 wget http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
 ````
 
-* Baixar e instalar o redis.
+* Baixar o redis.
 ````
-sudo apt-get install -y redis-server
+wget http://download.redis.io/releases/redis-3.0.5.tar.gz
 ````
 
-* Baixar e instalar o mongo.
+* Baixar o mongo.
 ````
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-sudo echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-sudo apt-get update
-
-sudo apt-get install -y mongodb-org
+wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.0.7.tgz
 ````
 
 ### Instalação do Hadoop
@@ -278,30 +273,31 @@ TODO
 ## Agenda
 
 * Aula 1
-	- Instalação do Hadoop Standalone e Pseudo-distribuido: ~30min
-	- HDFS Básico (ingestão de dados e consultas): ~45min
-	- MapReduce Básico (word count): ~30min
-	- MapReduce do Bolsa Familia: ~45min
-	- Instalação do hadoop em cluster com o Cloudera Manager: ~30min
+	- Instalação do Hadoop Standalone e Pseudo-distribuido.
+	- HDFS Básico (ingestão de dados e consultas).
+	- MapReduce Básico (word count).
+	- MapReduce do Bolsa Familia.
 
 * Aula 2
-	- Hive Básico: ~30min
-	- Hive com Bolsa Familia: 30min
-	- Sqoop Básico + Ingestão de dados de um MySQL: ~1h
-	- HUE (Hive e Oozie) no Cloudera Manager: 1h 
+	- Revisão Aula 	
+	- Hive Básico.
+	- Hive com Bolsa Familia.
+	- Sqoop Básico + Ingestão de dados de um MySQL.
+	- Cloudera Manager Overview.
 
 * Aula 3
-	- Intro a IA + Mahout Básico: ~1h
-	- Instalação HBase Standalone: ~30 min
-	- HBase Básico: ~30 min
-	- HBase Exemplos: ~30 min
-	- Apresentar HBase em cluster (explicar HDFS + Apresentar cluster do cloudera):  30 min
+	- Instalação de um cluster Hadoop.
+	- Intro a IA + Mahout Básico.
+	- Instalação HBase Standalone.
+	- HBase Básico.
+	- HBase Exemplos.
+	- Apresentar HBase em cluster (explicar HDFS + Apresentar cluster do cloudera).
 	 
 * Aula 4
-	- Instalação MongoDB Standalone: ~30min
-	- MongoDB Básico: ~30min
-	- MongoDB Modelagem: ~30min
-	- Instalação Redis Standalone: ~30min
-	- Redis Básico: ~30min
-	- Redis Modelagem: ~30min
+ 	- Instalação MongoDB Standalone.
+	- MongoDB Básico.
+	- MongoDB Modelagem.
+	- Instalação Redis Standalone.
+	- Redis Básico.
+	- Redis Modelagem.
 
