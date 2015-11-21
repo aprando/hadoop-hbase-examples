@@ -302,12 +302,11 @@ TODO
 	- Revisão Aula 	
 	- Hive Básico.
 	- Hive com Bolsa Familia.
-	- Sqoop Básico + Ingestão de dados de um MySQL.
 	- Cloudera Manager Overview.
+	- Intro a IA + Mahout Básico.
 
 * Aula 3
 	- Instalação de um cluster Hadoop.
-	- Intro a IA + Mahout Básico.
 	- Instalação HBase Standalone.
 	- HBase Básico.
 	- HBase Exemplos.
