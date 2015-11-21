@@ -11,44 +11,46 @@ Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
 #### Opção 1: Criando uma máquina virtual no VirtualBox ####
 
 Para isso, basta seguir os passos:
-* Baixar e instalar o [Virtual Box](https://www.virtualbox.org/). 
-* Baixar a iso do [Ubuntu Desktop 14.04.1](http://old-releases.ubuntu.com/releases/14.04.2/ubuntu-14.04.1-desktop-amd64.iso).
-* Abrir o Virtual Box.
-* Clicar na opção "Novo".
+
+1. Baixar e instalar o [Virtual Box](https://www.virtualbox.org/). 
+2. Baixar a iso do [Ubuntu Desktop 14.04.1](http://old-releases.ubuntu.com/releases/14.04.2/ubuntu-14.04.1-desktop-amd64.iso).
+3. Abrir o Virtual Box.
+4. Clicar na opção "Novo".
 ![Passo1](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-01.png)
-* Selecionar o sistema operacional Linux Ubuntu.
+5. Selecionar o sistema operacional Linux Ubuntu.
 ![Passo2](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-02.png)
-* Nomear a VM e selecionar a quantidade de HD (mínimo de 16GB).
+6. Nomear a VM e selecionar a quantidade de HD (mínimo de 16GB).
 ![Passo3](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-03.png)
-* Entrar no menu "Settings" -> "System" -> "Motherboard" e selecionar a quantidade de memoria RAM com mínimo de 2048MB (2GB).
+7. Entrar no menu "Settings" -> "System" -> "Motherboard" e selecionar a quantidade de memoria RAM com mínimo de 2048MB (2GB).
 ![Passo5](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-05.png)
-* Entrar no menu "Settings" -> "System" -> "Processor" e selecionar a quantidade de cores de CPU com mínimo de 4 cores.
+8. Entrar no menu "Settings" -> "System" -> "Processor" e selecionar a quantidade de cores de CPU com mínimo de 4 cores.
 ![Passo6](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-06.png)
-* Entrar no menu "Settings" -> "Display" -> "Vídeo" e selecionar a quantidade de memoria de 128GB RAM e opcao "Enable 3D Aceleration".
+9. Entrar no menu "Settings" -> "Display" -> "Vídeo" e selecionar a quantidade de memoria de 128GB RAM e opcao "Enable 3D Aceleration".
 ![Passo7](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-07.png)
-* Entrar no menu "Settings" -> "General" -> "Advanced" e habilitar copy e past entre a máquina virtual e a máquina host.
+10. Entrar no menu "Settings" -> "General" -> "Advanced" e habilitar copy e past entre a máquina virtual e a máquina host.
 ![Passo8](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-08.png)
 
-* Startar a sua VM.
-* Selecionar a ISO que você realizou download para iniciarmos a instalação do Ubuntu Server 14.04 (isso ocorrerá apenas na primeira inicialização).
+11. Startar a sua VM.
+12. Selecionar a ISO que você realizou download para iniciarmos a instalação do Ubuntu Server 14.04 (isso ocorrerá apenas na primeira inicialização).
 ![Passo4](https://raw.githubusercontent.com/aprando/hadoop-hbase-examples/master/images/passo-04.png)
 
-* Os passos referentes a instalação do Ubuntu na sua VM, considerar:
-  * Para a instalação, você pode selecionar a língua de sua preferência.
-  * Para o SO, recomendamos selecionar a lingua inglesa. 	
-  * Região e localização São Paulo / Brasil.
-  * Nome do usuário: hadoop
-  * Senha do usuário: 123456
-  * Etapas relacionadas a proxy, segurança e demais programas que devem ser instalados, basta clicar em "next". 
-  * Demais questionamentos, basta escolher a opção "padrão" e "next".	
+13. Os passos referentes a instalação do Ubuntu na sua VM, considerar:
 
-* Instale o pacote virtualbix-guest para conseguir resize da tela (ALELUUUUIA =]). Para isso, abra seu terminal e digite:
+..* Para a instalação, você pode selecionar a língua de sua preferência.
+..* Para o SO, recomendamos selecionar a lingua inglesa. 	
+..* Região e localização São Paulo / Brasil.
+..* Nome do usuário: hadoop
+..* Senha do usuário: 123456
+..* Etapas relacionadas a proxy, segurança e demais programas que devem ser instalados, basta clicar em "next". 
+..* Demais questionamentos, basta escolher a opção "padrão" e "next".	
+
+14. Instale o pacote virtualbix-guest para conseguir resize da tela. Para isso, abra seu terminal e digite:
 ````
 sudo apt-get update
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 ````
 
-* PRONTO! Agora sua VM esta completa e pronta para rodar seus exemplos do HADOOP!
+15. PRONTO! Agora sua VM esta completa e pronta para rodar seus exemplos do HADOOP!
 
 #### Opção 2: Vagrant ####
 Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vagrantup.com/), basta utilizar nosso VagrantFile que esta na raiz do projeto! =]
@@ -57,7 +59,10 @@ Caso contratário, por favor, utilize a opção 1.
 
 #### Opção 3: Máquina virtual já instalada... ####
 Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes instalados! =]
+Esta opção contemplate toda a instalação acima. Entretanto, confira se os itens 7, 8, 9 e 10 estão OK!
+````
 https://drive.google.com/folderview?id=0B6BAj1gwpQqKSzY5dnhNemc2OGc&usp=sharing
+````
 
 ### Realizar Dowload de pacotes
 Baixar todos os pacotes para utilizarmos na nossa instalação.
