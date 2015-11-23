@@ -138,17 +138,17 @@ wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.0.7.tgz
 
 Por default, o Hadoop é configurado para ser executado em um modo não-distribuído, como um único processo Java. 
 Por isso, a instalação do modo standalone é bem simples:
-* Descompacte o pacote do Hadoop baixado.
+* Descompacte o pacote do Hadoop baixado utilizando o comando tar -xvf <filename>.
 * Execute o comando abaixo e veja a documentação de como utilizar o script do hadoop:
 ```
-bin/hadoop
+./bin/hadoop
 ```
 
 Para validar seu funcionamento, rode o exemplo abaixo. Nele nós executamos um programa 'grep' dentro do jar hadoop-mapreduce-examples-*.jar que recebe um diretorio, busca e apresenta todos os matches de uma regular expression em um diretorio output: 
 ```
 mkdir input
 cp etc/hadoop/*.xml input
-bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
+./bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
 cat output/*
 ```
 
@@ -212,13 +212,13 @@ http://localhost:50070/
 
 * Make the HDFS directories required to execute MapReduce jobs:
 ```
-bin/hdfs dfs -mkdir /user
-bin/hdfs dfs -mkdir /user/<username>
+./bin/hdfs dfs -mkdir /user
+./bin/hdfs dfs -mkdir /user/<username>
 ```
 
 * Quando finalizar, pare as deamons:
 ```
-sbin/stop-dfs.sh
+./sbin/stop-dfs.sh
 ```
 
 ##### Configuração do YARN
@@ -255,30 +255,30 @@ sbin/start-yarn.sh
 
 * Quando finalizar, pare as deamons:
 ```
-sbin/stop-yarn.sh
+./sbin/stop-yarn.sh
 ```
 
 ##### Validando a instalação
 
 * Copie alguns arquivos de input no hdfs:
 ```
-bin/hdfs dfs -put etc/hadoop input
+./bin/hdfs dfs -put etc/hadoop input
 ```
 
 * Rode o comando grep do jar de exemplo.
 ```
-bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
+./bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
 ```
 
 * Examine os arquivos de saida baixando eles para sua maquina local:
 ```
-bin/hdfs dfs -get output output
+./bin/hdfs dfs -get output output
 cat output/*
 ```
 
 * ou veja os arquivos de saida dentro do proprio hdfs:
 ```
-bin/hdfs dfs -cat output/*
+./bin/hdfs dfs -cat output/*
 ```
 
 ### Instalação do HBase
