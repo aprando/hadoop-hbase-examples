@@ -161,7 +161,7 @@ Para isso, siga as configurações a seguir.
 O Hadoop gerencia todos os nós do seu cluster por meio de acesso SSH. Como nosso exemplo roda em um unico nó pseudo-distribuido, precisamos configurar o acesso SSH para localhost e o usuário hadoop (ou o usuário ubuntu que você vai rodar seus jobs).
 ```
 ssh-keygen
-cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
 ssh localhost
 ```
 
