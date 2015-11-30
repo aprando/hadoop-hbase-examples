@@ -50,7 +50,7 @@ Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vag
 Caso contratário, por favor, utilize a opção 1.
 
 #### Opção 3: Máquina virtual já criada... ####
-Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes instalados! =]
+Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes baixados! =]
 Esta opção contempla toda a instalação acima e os pacotes abaixo, porém nenhuma instalação foi realizada.
 Por favor, confira se os itens 7, 8, 9 e 10 estão OK!
 ````
@@ -58,8 +58,14 @@ https://drive.google.com/folderview?id=0B6BAj1gwpQqKSzY5dnhNemc2OGc&usp=sharing
 ````
 
 ### Realizar Dowload de pacotes
-Baixar todos os pacotes para utilizarmos na nossa instalação.
+Baixar todos os pacotes para utilizarmos na nossa instalação em uma unica pasta.
 Para isso, basta rodar os comandos abaixo na sua vm
+* Criar pasta e acessa-la:
+````
+mkdir ~/hadoop-handson
+cd ˜/hadoop-handson
+````
+
 * Instalar Java:
 ````
 sudo add-apt-repository ppa:webupd8team/java -y
@@ -138,7 +144,12 @@ wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.0.7.tgz
 
 Por default, o Hadoop é configurado para ser executado em um modo não-distribuído, como um único processo Java. 
 Por isso, a instalação do modo standalone é bem simples:
-* Descompacte o pacote do Hadoop baixado utilizando o comando tar -xvf <filename>.
+* Descompacte o pacote do Hadoop e acessa a pasta:
+```
+tar -xvf hadoop-2.7.1.tar.gz
+cd hadoop-2.7.1/
+```
+
 * Execute o comando abaixo e veja a documentação de como utilizar o script do hadoop:
 ```
 ./bin/hadoop
@@ -197,12 +208,12 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
 * Formate o filesystem:
 ```
-bin/hdfs namenode -format
+./bin/hdfs namenode -format
 ```
 
 * Inicie as deamons DataNode e NameNode (um arquivo de log é escrito no diretorio $HADOOP_HOME/logs).
 ```
-sbin/start-dfs.sh
+./sbin/start-dfs.sh
 ```
 
 * Navegue pela interface web do NameNode:
