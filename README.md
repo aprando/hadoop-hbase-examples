@@ -295,8 +295,7 @@ cat output/*
 ### Instalação do HBase
 Vamos instalar o HBase Standalone, que de forma muito parecida com o Hadoop Standalone, simula o HBase em sua máquina utilizando o seu SO como filesytem. Para isso, basta seguir as instruções abaixo:
 
-* IP Loopback 
-O HBase espera um loopback do IP, que na distribuição Ubuntu pode causar alguns problemas. Para tratar, alterar seu /etc/hosts:
+* O HBase espera um loopback do IP, que na distribuição Ubuntu pode causar alguns problemas. Para tratar, alterar seu /etc/hosts:
 ```
 127.0.0.1 localhost
 127.0.0.1 ubuntu.ubuntu-domain ubuntu
