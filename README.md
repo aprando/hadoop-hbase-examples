@@ -293,7 +293,49 @@ cat output/*
 ```
 
 ### Instalação do HBase
-TODO
+Vamos instalar o HBase Standalone, que de forma muito parecida com o Hadoop Standalone, simula o HBase em sua máquina utilizando o seu SO como filesytem. Para isso, basta seguir as instruções abaixo:
+
+* IP Loopback 
+O HBase espera um loopback do IP, que na distribuição Ubuntu pode causar alguns problemas. Para tratar, alterar seu /etc/hosts:
+```
+127.0.0.1 localhost
+127.0.0.1 ubuntu.ubuntu-domain ubuntu
+```
+
+* Descompate seu arquivo e acesse a pasta:
+```
+$ tar xzvf hbase-<?eval ${project.version}?>-bin.tar.gz
+$ cd hbase-<?eval ${project.version}?>/
+```
+
+* Edite o arquivo conf/hbase-site.xml:
+```
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>file:///home/testuser/hbase</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/home/testuser/zookeeper</value>
+  </property>
+</configuration>
+```
+
+* Altere o seu arquivo conf/hbase-env.sh com a JAVA_HOME.
+```
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+```
+
+* Suba o HBase! =]
+```
+bin/start-hbase.sh
+```
+
+* Pronto! O HBase esta no ar. Você pode utilizar o shell e realizar suas primeiras queries:
+```
+./bin/hbase shell
+```
 
 ### Instalação do Mongo
 TODO
