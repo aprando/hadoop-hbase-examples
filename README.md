@@ -293,7 +293,10 @@ cat output/*
 ```
 
 ### Instalação do HBase
-Vamos instalar o HBase Standalone, que de forma muito parecida com o Hadoop Standalone, simula o HBase em sua máquina utilizando o seu SO como filesytem. Para isso, basta seguir as instruções abaixo:
+Assim como o Hadoop, o HBase pode ser instalado nos modos Standalone, Pseudo-distribuido e Distribuido.
+
+#### Standalone
+De forma muito parecida com o Hadoop Standalone, o HBase simula em sua máquina utilizando o seu SO como filesytem. Para isso, basta seguir as instruções abaixo:
 
 * O HBase espera um loopback do IP, que na distribuição Ubuntu pode causar alguns problemas. Para tratar, alterar seu /etc/hosts:
 ```
@@ -335,6 +338,38 @@ bin/start-hbase.sh
 ```
 ./bin/hbase shell
 ```
+
+#### Pseudo-distribuido
+Neste modo o HBase roda em apenas um host, porém cada HBase daemon (HMaster, HRegionServer e Zookeeper) roda em um procesos separado. Por padrão, ao menos que você configure o hbase.rootdir como descrito no Standalone mode, seus dados ainda serão salvos em /tmp/, mas com a opção de utilizar o HDFS ao invés do seu Filesystem.
+
+Observação: este passo assume que você já subiu o Hadoop e HDFS pseudo-distribuido com sucesso.
+
+* Pare o HBASE se ele estiver rodando.
+* Edit o arquivo hbase-site.xml.
+```
+<property>
+  <name>hbase.cluster.distributed</name>
+  <value>true</value>
+</property>
+<property>
+  <name>hbase.rootdir</name>
+  <value>hdfs://localhost:8020/hbase</value>
+</property>
+```
+
+* Suba o HBase.
+```
+./bin/start-hbase.sh
+```
+
+* Verifique a pasta hbase criada no HDFS.
+```
+./hadoop-<version>/bin/hadoop fs -ls /hbase
+```
+
+* Recrie as tabelas do modo standalone e consulte a pasta do HDFS novamente! Você vera os arquivos sendo armazendos no HDFS! =]
+
+
 
 ### Instalação do Mongo
 TODO
