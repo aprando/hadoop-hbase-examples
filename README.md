@@ -369,10 +369,35 @@ Observação: este passo assume que você já subiu o Hadoop e HDFS pseudo-distr
 
 * Recrie as tabelas do modo standalone e consulte a pasta do HDFS novamente! Você vera os arquivos sendo armazendos no HDFS! =]
 
-
-
 ### Instalação do Mongo
-TODO
+Para instalar o MongoDB siga as instruções abaixo:
+
+* Descompacte o arquivo baixado:
+```
+tar -xvf mongodb-linux-x86_64-ubuntu1404-3.0.7.tgz
+```
+
+* Crie uma pasta e mova todos os arquivos para ela:
+```
+mkdir -p mongodb
+cp -R -n mongodb-linux-x86_64-ubuntu1404-3.0.7/ mongodb
+```
+
+* Coloque os binarios no PATH. 
+```
+export PATH=/home/hadoop/hadoop-handson/mongodb/bin:$PATH
+```
+
+* Crie o diretório que os dados serão armazenados.
+Antes de inicializar o MongoDB pela primeira vez, crie o diretório que o processo mongod persistirá os dados. Por padrão, o processo mongod utiliza o diretorio /data/db.
+```
+mkdir -p /data/db
+```
+
+The following example command creates the default /data/db directory:
+
+
+
 
 ### Instalação do Redis
 TODO
