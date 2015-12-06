@@ -379,8 +379,7 @@ tar -xvf mongodb-linux-x86_64-ubuntu1404-3.0.7.tgz
 
 * Crie uma pasta e mova todos os arquivos para ela:
 ```
-mkdir -p mongodb
-cp -R -n mongodb-linux-x86_64-ubuntu1404-3.0.7/ mongodb
+mv mongodb-linux-x86_64-ubuntu1404-3.0.7 mongodb
 ```
 
 * Coloque os binarios no PATH. 
@@ -391,16 +390,57 @@ export PATH=/home/hadoop/hadoop-handson/mongodb/bin:$PATH
 * Crie o diretório que os dados serão armazenados.
 Antes de inicializar o MongoDB pela primeira vez, crie o diretório que o processo mongod persistirá os dados. Por padrão, o processo mongod utiliza o diretorio /data/db.
 ```
-mkdir -p /data/db
+sudo mkdir -p /data/db
 ```
 
-The following example command creates the default /data/db directory:
+* Adicione as permissões para esta pasta:
+```
+sudo chown hadoop.hadoop -R /data/
+```
 
+* Inicie o MongoDB.
+Para iniciar o MongoDB, inicie o processo mongod, que vai ficar escutando conexoes (abra em uma aba separada para você analisar as logs).
+```
+./mongodb/bin/mongod
+```
 
-
+* Abra o mongo shell e execute os comandos! =]
+```
+./mongodb/bin/mongo
+```
 
 ### Instalação do Redis
-TODO
+Redis é uma base de dados muito poderosa, e talvez a mais simples de instalar e utilizar!
+Para instala-lo, basta seguir os passos abaixo:
+
+* Descompacte o arquivo baixado:
+```
+tar -xvf redis-3.0.5.tar.gz 
+```
+
+* Como o redis é escrito utilizando a lingugem C, vamos buildar a solução com o comando make:
+```
+cd redis-3.0.5
+make
+```
+
+* Após a compilação o diretório src é populado com:
+	- redis-server é o servidor do Redis!
+	- redis-sentinel é processo para monitoramento.
+	- redis-benchmark utilizado para medir a performace do Redis.
+	- redis-check-aof e redis-check-dump são utilizados quando há algum problema de arquivo corrompido.
+
+* Inicie o redis-server (abra em outra aba para você ver os logs):
+```
+cd redis-3.0.5/src
+redis-server
+```
+
+* Faça comandos utilizando redis-cli... =]
+```
+cd redis-3.0.5/src
+redis-cli
+```
 
 ## Agenda
 
