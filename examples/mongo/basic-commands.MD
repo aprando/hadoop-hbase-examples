@@ -116,6 +116,16 @@ db.deptos.update(
 )
 ```
 
+* E se você deseja que o documento seja criado caso não exista, utilize upsert!
+```
+db.deptos.update(
+	{ nome: "BLA" },
+	{ orcamentoGlobalDepto: 16000 },
+	{ upsert: true }
+)
+```
+
+
 # Comparando RDBMS com MongoDB
 
 Para facilitar o entendimento, vamos comparar alguns scripts RDBMS e MOngoDB
