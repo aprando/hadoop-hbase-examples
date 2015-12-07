@@ -91,7 +91,7 @@ db.deptos.find(
 db.deptos.remove({siglaDepto: 'INFO'})
 ```
 
-* Atualizando documentos:
+* Atualizando um documento:
 ```
 db.deptos.update(
 	{ numeroFuncionariosDepto: { $gt: 1 },
@@ -102,10 +102,20 @@ db.deptos.update(
 * CUIDADO! Se você não passar o $set, o documento todo será sobrescrito!
 ```
 db.deptos.update(
-	{ numeroFuncionariosDepto: { $gt: 1 },
+	{ nome: "BLA" },
 	{ orcamentoGlobalDepto: 16000 }
 )
 ```
+
+* E se você deseja atualizar multiplos documentos ao mesmo tempo, você deve explicitar utilizando o parametro multi:
+```
+db.deptos.update(
+	{ numeroFuncionariosDepto: { $gt: 1 },
+	{ orcamentoGlobalDepto: 16000 },
+	{ multi: true }
+)
+```
+
 # Comparando RDBMS com MongoDB
 
 Para facilitar o entendimento, vamos comparar alguns scripts RDBMS e MOngoDB
