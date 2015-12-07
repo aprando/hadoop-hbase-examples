@@ -99,6 +99,13 @@ db.deptos.update(
 )
 ```
 
+* CUIDADO! Se você não passar o $set, o documento todo será sobrescrito!
+```
+db.deptos.update(
+	{ numeroFuncionariosDepto: { $gt: 1 },
+	{ orcamentoGlobalDepto: 16000 }
+)
+```
 # Comparando RDBMS com MongoDB
 
 Para facilitar o entendimento, vamos comparar alguns scripts RDBMS e MOngoDB
