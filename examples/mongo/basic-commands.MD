@@ -65,7 +65,7 @@ db.deptos.find({ siglaDepto: { $in: [ 'INFO', 'VEND' ] } })
 db.deptos.find( { siglaDepto: 'INFO', orcamentoGlobalDepto: { $lt: 1 } } )
 ````
 
-* Consultando utilziando OR clause:
+* Consultando utilizando OR clause:
 ```
 db.deptos.find( { $or: [
 	 { numeroFuncionariosDepto: { $gt: 1 } },
@@ -73,7 +73,7 @@ db.deptos.find( { $or: [
 ] } )
 ```
 
-* Consultando utilziando AND with OR clause:
+* Consultando utilizando AND with OR clause:
 ```
 db.deptos.find(
    {
@@ -83,6 +83,19 @@ db.deptos.find(
 	 	 { orcamentoGlobalDepto: { $lt: 800001 } } 
 	 ]
    }
+)
+```
+
+* Removendo alguns documentos:
+```
+db.deptos.remove({siglaDepto: 'INFO'})
+```
+
+* Atualizando documentos:
+```
+db.deptos.update(
+	{ numeroFuncionariosDepto: { $gt: 1 },
+	{ "$set": { orcamentoGlobalDepto: 16000 }}
 )
 ```
 
