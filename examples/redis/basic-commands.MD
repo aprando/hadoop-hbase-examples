@@ -39,3 +39,6 @@ HGETALL user:1000
 HSET user:1000 password 12345
 HGETALL user:1000
 ```
+
+* Um tutorial bem bacana feito pelo pessoal que desenvolve o redis: http://try.redis.io/ 
+
