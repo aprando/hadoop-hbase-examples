@@ -460,34 +460,3 @@ redis-server
 cd redis-3.0.5/src
 redis-cli
 ```
-
-## Agenda
-
-* Aula 1
-	- Instalação do Hadoop Standalone e Pseudo-distribuido.
-	- HDFS Básico (ingestão de dados e consultas).
-	- MapReduce Básico (word count).
-	- MapReduce do Bolsa Familia.
-
-* Aula 2
-	- Revisão Aula 	
-	- Hive Básico.
-	- Hive com Bolsa Familia.
-	- Cloudera Manager Overview.
-	- Intro a IA + Mahout Básico.
-
-* Aula 3
-	- Instalação de um cluster Hadoop.
-	- Instalação HBase Standalone.
-	- HBase Básico.
-	- HBase Exemplos.
-	- Apresentar HBase em cluster (explicar HDFS + Apresentar cluster do cloudera).
-	 
-* Aula 4
- 	- Instalação MongoDB Standalone.
-	- MongoDB Básico.
-	- MongoDB Modelagem.
-	- Instalação Redis Standalone.
-	- Redis Básico.
-	- Redis Modelagem.
-
