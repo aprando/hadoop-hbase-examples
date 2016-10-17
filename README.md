@@ -2,7 +2,7 @@
 Este projeto realiza um overview de Big Data e NoSQL contemplando instalação, configuração e exemplos praticos de Hadoop, HBase, Mongo e Redis. 
 
 ## Intro
-Todos os exemplos são executados em um ambiente Linix. Portanto, se você possui experiência com Linux, siga os manuais de instalação e configuração abaixo e prepare o ambiente na máquina que desejar.
+Todos os exemplos são executados em um ambiente Linux. Portanto, se você possui experiência com Linux, siga os manuais de instalação e configuração abaixo e prepare o ambiente na máquina que desejar.
 
 Caso contrário, siga a instalação no tópico "Ambiente".
 
