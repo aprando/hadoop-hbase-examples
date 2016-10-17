@@ -18,7 +18,7 @@ mv mongodb-linux-x86_64-ubuntu1404-3.0.7 mongodb
 
 * Coloque os binarios no PATH. 
 ```
-export PATH=/home/hadoop/hadoop-handson/mongodb/bin:$PATH
+export PATH=/home/jonsnow/hadoop-handson/mongodb/bin:$PATH
 ```
 
 * Crie o diretório que os dados serão armazenados.
@@ -29,7 +29,7 @@ sudo mkdir -p /data/db
 
 * Adicione as permissões para esta pasta:
 ```
-sudo chown hadoop.hadoop -R /data/
+sudo chown jonsnow.jonsnow -R /data/
 ```
 
 * Inicie o MongoDB.
