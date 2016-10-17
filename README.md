@@ -6,7 +6,8 @@ Todos os exemplos são executados em um ambiente Linix. Portanto, se você possu
 
 Caso contrário, siga a instalação no tópico "Ambiente".
 
-Manuais de instalação e configuraçãoÇ
+Manuais de instalação e configuração:
+
 1. [MongoDB](https://github.com/aprando/hadoop-hbase-examples/blob/master/MONGODB.MD)
 2. [Redis](https://github.com/aprando/hadoop-hbase-examples/blob/master/REDIS.MD)
 3. [Hadoop e Hbase](https://github.com/aprando/hadoop-hbase-examples/blob/master/HADOOP_HBASE.MD)
