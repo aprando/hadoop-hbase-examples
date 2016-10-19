@@ -17,7 +17,16 @@ Manuais de instalação e configuração:
 ### Instalação do Sistema Operacional
 Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
 
-#### Opção 1: Criando uma máquina virtual no VirtualBox ####
+
+#### Opção 1: Máquina virtual já criada... ####
+Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes baixados! =]
+Esta opção contempla toda a instalação acima e os pacotes abaixo, porém nenhuma instalação foi realizada.
+Por favor, confira se os itens 7, 8, 9 e 10 estão OK!
+````
+https://drive.google.com/open?id=0B6BAj1gwpQqKSFZ6aHNpLXpqTkE
+````
+
+#### Opção 2: Criando uma máquina virtual no VirtualBox ####
 
 Para isso, basta seguir os passos:
 
@@ -53,15 +62,8 @@ sudo apt-get update
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 ```
 
-#### Opção 2: Vagrant ####
+#### Opção 3: Vagrant ####
 Caso você seja um desenvolvedor experiente e conheça [vagrant](https://www.vagrantup.com/), basta utilizar nosso VagrantFile que esta na raiz do projeto! =]
 
 Caso contratário, por favor, utilize a opção 1.
 
-#### Opção 3: Máquina virtual já criada... ####
-Também disponibilizamos uma VM com Ubuntu Desktop instalado e com todos os pacotes baixados! =]
-Esta opção contempla toda a instalação acima e os pacotes abaixo, porém nenhuma instalação foi realizada.
-Por favor, confira se os itens 7, 8, 9 e 10 estão OK!
-````
-https://drive.google.com/folderview?id=0B6BAj1gwpQqKSzY5dnhNemc2OGc&usp=sharing
-````
