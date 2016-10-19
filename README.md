@@ -20,9 +20,13 @@ Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
 
 #### Opção 1: Máquina virtual já criada... ####
 Uma VM com Ubuntu Desktop instalado e com todos os pacotes baixados! =]
+Basta baixa-la e importa-la utilizando [Virtual Box](https://www.virtualbox.org/).
+
+Usuário e senha da VM:
  - Usuário: jonsnow
  - Senha: stark
 
+Link para a VM:
 ````
 https://drive.google.com/open?id=0B6BAj1gwpQqKSFZ6aHNpLXpqTkE
 ````
