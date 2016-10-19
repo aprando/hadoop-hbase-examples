@@ -20,6 +20,9 @@ Em nossas aulas vamos utilizar o Ubuntu Server 14.04 em uma máquina virtual.
 
 #### Opção 1: Máquina virtual já criada... ####
 Uma VM com Ubuntu Desktop instalado e com todos os pacotes baixados! =]
+ - Usuário: jonsnow
+ - Senha: stark
+
 ````
 https://drive.google.com/open?id=0B6BAj1gwpQqKSFZ6aHNpLXpqTkE
 ````
