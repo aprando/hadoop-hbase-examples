@@ -34,16 +34,6 @@ public class App extends Configured implements Tool {
     	 * 11 - Valor Parcela e Mês Competência.
     	 */
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-        	try{
-	        	boolean porUf = "UF".equals( context.getConfiguration().get("tipo") );
-	        	
-	        	String[] colunas = value.toString().split(";");
-	        	
-	        	String mapKey = (porUf ? colunas[1-1] : colunas[3-1] );
-	        	Double accKey = (porUf ? Double.parseDouble(  colunas[11-1].replaceAll(",", "") ) : 1d);
-	        	
-	        	context.write(new Text(mapKey), new DoubleWritable(accKey) );
-        	}catch(Exception e){e.printStackTrace();}
         }        
     }
     
@@ -53,46 +43,12 @@ public class App extends Configured implements Tool {
     	private static final DecimalFormat df = new DecimalFormat("#.00"); 
     	
     	public void reduce(Text key, Iterable<DoubleWritable> values, Context context)  throws IOException, InterruptedException {
-    		double total = 0d;
-    		for(DoubleWritable valor:values) {
-    			total += valor.get();
-    		}
-    		
-			context.write(new Text(key), new Text( df.format(total)));
     	}
     	
     }
     
 	
     public int run(String[] allArgs) throws Exception {
-        Job job = Job.getInstance(getConf());
-        
-
-	    job.setJarByClass(App.class);
-	    
-	    job.setMapperClass(LogMapper.class);
-	    job.setReducerClass(LogReducer.class);
-	    job.setOutputKeyClass(Text.class);
-	    job.setOutputValueClass(Text.class);
-	    job.setMapOutputValueClass(DoubleWritable.class);
-	    job.setNumReduceTasks(10);
-	    
-	
-        String[] args = new GenericOptionsParser(getConf(), allArgs).getRemainingArgs();
-        
-        String tipo = args[0];
-        FileInputFormat.setInputPaths(job, new Path(args[1]));
-        FileOutputFormat.setOutputPath(job, new Path(args[2]));
-        
-        job.getConfiguration().set("tipo", tipo);
-
-        boolean status = job.waitForCompletion(true);
-
-        if (status) {
-            return 0;
-        } else {
-            return 1;
-        }
     }    
 	
 	public static void main(String[] args) throws Exception  {
