@@ -58,8 +58,8 @@ Por default, o Hadoop é configurado para ser executado em um modo não-distribu
 Por isso, a instalação do modo standalone é bem simples:
 * Descompacte o pacote do Hadoop e acessa a pasta:
 ```
-tar -xvf hadoop-2.7.1.tar.gz
-cd hadoop-2.7.1/
+tar -xvf hadoop-2.7.3.tar.gz
+cd hadoop-2.7.3/
 ```
 
 * Execute o comando abaixo e veja a documentação de como utilizar o script do hadoop:
@@ -71,7 +71,7 @@ Para validar seu funcionamento, rode o exemplo abaixo. Nele nós executamos um p
 ```
 mkdir input
 cp etc/hadoop/*.xml input
-./bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
+./bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar grep input output 'dfs[a-z.]+'
 cat output/*
 ```
 
